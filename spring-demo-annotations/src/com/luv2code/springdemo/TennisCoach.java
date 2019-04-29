@@ -5,9 +5,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class TennisCoach implements Coach {
 
+    // gets tennis workout
     @Override
     public String getDailyWorkout() {
-        return "Practice your backhand volley";
+        return "Tennis: Practice your backhand volley";
+    }
+
+    // gets tennis video infos
+    @Override
+    public String getDailyVideo() {
+        return "Tennis: Film some hard Ace shots";
     }
 
 }
