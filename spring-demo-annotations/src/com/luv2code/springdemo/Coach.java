@@ -8,5 +8,8 @@ public interface Coach {
     // calls to get clips for video
     public String getDailyVideo();
 
+    // calls to get fortune
+    public String getDailyFortune();
+
 
 }

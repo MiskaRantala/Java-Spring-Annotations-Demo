@@ -1,9 +1,17 @@
 package com.luv2code.springdemo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BreakdanceCoach implements Coach {
+
+    private FortuneService fortuneService;
+
+    @Autowired
+    public BreakdanceCoach(FortuneService theFortuneService) {
+        fortuneService = theFortuneService;
+    }
 
     // gets breakdance workout
     @Override
@@ -15,6 +23,13 @@ public class BreakdanceCoach implements Coach {
     @Override
     public String getDailyVideo() {
         return "Breakdance: Film 4 new combos";
+    }
+
+    // gets fortune
+    @Override
+    public String getDailyFortune() {
+        // TODO Auto-generated method stub
+        return fortuneService.getFortune();
     }
 
 }
