@@ -1,17 +1,32 @@
 package com.luv2code.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TennisCoach implements Coach {
 
+    @Autowired
+    @Qualifier("randomFortuneService")
     private FortuneService fortuneService;
+
+    // define a default constructor
+    public TennisCoach() {
+    }
+
+    // Setter and Construction injection
+    /*
+    @Autowired
+    public void setFortuneService(FortuneService theFortuneService) {
+        fortuneService = theFortuneService;
+    }
 
     @Autowired
     public TennisCoach(FortuneService theFortuneService) {
         fortuneService = theFortuneService;
     }
+    */
 
     // gets tennis workout
     @Override
@@ -28,7 +43,6 @@ public class TennisCoach implements Coach {
     // gets fortune
     @Override
     public String getDailyFortune() {
-        // TODO Auto-generated method stub
         return fortuneService.getFortune();
     }
 

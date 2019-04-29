@@ -1,17 +1,22 @@
 package com.luv2code.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BreakdanceCoach implements Coach {
 
+    @Autowired
+    @Qualifier("randomFortuneService")
     private FortuneService fortuneService;
 
+    /*
     @Autowired
     public BreakdanceCoach(FortuneService theFortuneService) {
         fortuneService = theFortuneService;
     }
+     */
 
     // gets breakdance workout
     @Override
@@ -28,7 +33,6 @@ public class BreakdanceCoach implements Coach {
     // gets fortune
     @Override
     public String getDailyFortune() {
-        // TODO Auto-generated method stub
         return fortuneService.getFortune();
     }
 
