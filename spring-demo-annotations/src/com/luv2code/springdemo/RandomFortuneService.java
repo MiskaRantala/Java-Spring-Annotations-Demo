@@ -2,6 +2,8 @@ package com.luv2code.springdemo;
 
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -12,6 +14,11 @@ import java.util.Random;
 
 @Component
 public class RandomFortuneService implements FortuneService {
+
+    @PostConstruct
+    public void doMyStartup() {
+        System.out.println("Beep bop. Activating bzzt!");
+    }
 
     //read the file
     private String fileName = "/Users/miska/IdeaProjects/spring-demo-annotations/src/fortune.properties";
@@ -43,9 +50,10 @@ public class RandomFortuneService implements FortuneService {
 
     }
 
+
     // picks a random string from the array
     @Override
-    public String getFortune() {
+    public String getFortune () {
 
         int random = randomFortune.nextInt(data.size());
 
@@ -54,6 +62,11 @@ public class RandomFortuneService implements FortuneService {
         return theFortune;
     }
 
+    @PreDestroy
+    public void doMyCleanup() {
+        System.out.println("Beep bop. Sending results and destroying the bean. ");
+        System.out.println("Bye bye, bean!");
+    }
 
 }
 
