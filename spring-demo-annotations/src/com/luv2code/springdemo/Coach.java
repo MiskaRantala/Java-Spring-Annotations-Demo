@@ -6,7 +6,7 @@ public interface Coach {
     public String getDailyWorkout();
 
     // calls to get clips for video
-    public String getDailyVideo();
+    //public String getDailyVideo();
 
     // calls to get fortune
     public String getDailyFortune();

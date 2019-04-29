@@ -54,10 +54,11 @@ public class TennisCoach implements Coach {
     }
 
     // gets tennis video infos
-    @Override
+    /* @Override
     public String getDailyVideo() {
         return "Tennis: Film some hard Ace shots";
     }
+     */
 
     // gets fortune
     @Override

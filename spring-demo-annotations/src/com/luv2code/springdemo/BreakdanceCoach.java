@@ -24,11 +24,13 @@ public class BreakdanceCoach implements Coach {
         return "Breakdance: Do your best windmill 20 times";
     }
 
+    /*
     // gets breakdance video infos
     @Override
     public String getDailyVideo() {
         return "Breakdance: Film 4 new combos";
     }
+     */
 
     // gets fortune
     @Override
